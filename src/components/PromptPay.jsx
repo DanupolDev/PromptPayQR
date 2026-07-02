@@ -31,6 +31,12 @@ function PromptPay() {
       return;
     }
 
+    // ตรวจสอบว่าใส่จำนวนเงินเป็น ลบ หรือไม่ เนื่องจากเป็นลบจะไม่สามารถใช้งานได้
+    if (amountInput && parseFloat(amountInput) < 0) {
+      setError("กรุณากรอกจำนวนเงินให้ถูกต้อง (ไม่ติดลบ)");
+      return;
+    }
+
     try {
       /**
        * idType
@@ -97,6 +103,8 @@ function PromptPay() {
             <input
               type="number"
               value={amountInput}
+              min="0"
+              step="any"
               onChange={(e) => setAmountInput(e.target.value)}
               placeholder="ปล่อยว่างได้ หากให้ผู้โอนระบุเอง"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
