@@ -1,7 +1,8 @@
 # PromptPay QR Generator
 
 เขียนด้วย React 19, Vite และตกแต่งหน้าตาด้วย Tailwind CSS โดยใช้ไลบรารี promptparse ในการเจนค่าตามมาตรฐาน EMVCo และสามารถ scan ผ่าน application ธนาคารได้
-Link สำหรับ Preview:
+
+Link สำหรับ Preview: https://prompt-pay-qr.vercel.app/
 
 # Features
 
